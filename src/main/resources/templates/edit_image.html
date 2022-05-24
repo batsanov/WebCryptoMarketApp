@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit image</title>
+</head>
+<body>
+<label> Profile picture: </label>
+
+<form th:action="@{/user/profile/edit/image/{id}(id=${user.id})}" method ="post" enctype="multipart/form-data">
+<input type = "file" name = "fileImage" id = "fileImage" accept="image/png, image/jpeg" />
+    <button type="submit" class="submit-btn">UPDATE</button>
+</form>
+
+
+</body>
+</html>

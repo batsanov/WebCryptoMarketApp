@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trading page</title>
+    <link rel="stylesheet" href="/css/trading.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="hwrapper">
+        <div class="header">
+            <div class="logo"><a href="#">Batsanov</a></div>
+            <ul class="hnav">
+                <li class="settings"><a href="/user/profile">Profile info</a></li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cwrapper" style="display:none;">
+        <img src="http://www.scutify.com/img/scuttles/528a95ecb229aa08549a5cc0.png" alt="" style="width:100%; height:800px;" />
+    </div>
+
+    <div class="cwrapper">
+        <div class="content">
+            <h1>Crypto Market</h1>
+        </div>
+    </div>
+
+    <div class="cwrapper alt">
+        <div class="content">
+
+
+            <div class="cbox fleft">
+                <h3>Buy Bitcoin </h3>
+                <div class="flist">
+                    <p>Dollar Amount:</p>
+                    <form th:action="@{/trading/buy/bitcoin}"  method="post">
+                    <input th:name= "value" type="text" placeholder="$ 0.00" autocomplete="off"/>
+
+                        <div class="flist">
+                            <p>&nbsp;</p>
+                            <button type="submit" class="button blue" >Buy</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="rwrap">
+                    <div>
+                        <div class="flist">
+
+                            <p class = "price_text" th:text="'Current price: ' + ${#numbers.setFormatDecimal(prices.get('bitcoin')*(1+0.02), 1, 'DEFAULT', 2, 'DEFAULT') + '$'}"> </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cbox fright">
+                <h3>Buy Ethereum</h3>
+                <div class="flist">
+                    <p>Dollar Amount:</p>
+                    <form th:action="@{/trading/buy/ethereum}"  method="post">
+                        <input th:name= "value" type="text" placeholder="$ 0.00" autocomplete="off" />
+
+                        <div class="flist">
+                            <p>&nbsp;</p>
+                            <button type="submit" class="button blue" >Buy</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="rwrap">
+                    <div>
+                        <div class="flist">
+                            <p th:text="'Current price: ' + ${#numbers.setFormatDecimal(prices.get('ethereum')*(1+0.02), 1, 'DEFAULT', 2, 'DEFAULT') + '$'}"> </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="cbox fleft" style="margin-top: 60px">
+                <h3>Buy Polkadot </h3>
+                <div class="flist">
+                    <p>Dollar Amount:</p>
+                    <form th:action="@{/trading/buy/polkadot}"  method="post">
+                        <input th:name= "value" type="text" placeholder="$ 0.00" autocomplete="off" />
+
+                        <div class="flist">
+                            <p>&nbsp;</p>
+                            <button type="submit" class="button blue" >Buy</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="rwrap">
+                    <div>
+                        <div class="flist">
+                            <p th:text="'Current price: '+ ${#numbers.setFormatDecimal(prices.get('polkadot')*(1+0.02), 1, 'DEFAULT', 2, 'DEFAULT') + '$'}"> </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="cbox fright" style="margin-top: 60px">
+                <h3>Buy Solana</h3>
+                <div class="flist">
+                    <p>Dollar Amount:</p>
+                    <form th:action="@{/trading/buy/solana}"  method="post">
+                        <input th:name= "value" type="text" placeholder="$ 0.00" autocomplete="off"/>
+
+                        <div class="flist">
+                            <p>&nbsp;</p>
+                            <button type="submit" class="button blue" >Buy</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="rwrap">
+                    <div>
+                        <div class="flist">
+                            <p th:text="'Current price: ' + ${#numbers.setFormatDecimal(prices.get('solana')*(1+0.02), 1, 'DEFAULT', 2, 'DEFAULT') + '$'}"> </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="cbox fleft" style="margin-top: 60px">
+                <h3>Sell Bitcoin </h3>
+                <div class="flist">
+                    <p>Bitcoin Amount:</p>
+                    <form th:action="@{/trading/sell/bitcoin}"  method="post">
+                        <input th:name= "value" type="text" placeholder="$ 0.00" autocomplete="off"/>
+
+                        <div class="flist">
+                            <p>&nbsp;</p>
+                            <button type="submit" class="button blue" >Sell</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="rwrap">
+                    <div>
+                        <div class="flist">
+
+                            <p th:text="'Current price: ' + ${#numbers.setFormatDecimal(prices.get('bitcoin'), 1, 'DEFAULT', 2, 'DEFAULT')+ '$'}"> </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="cbox fright" style="margin-top: 60px">
+                <h3>Sell Ethereum</h3>
+                <div class="flist">
+                    <p>Ethereum Amount:</p>
+                    <form th:action="@{/trading/sell/ethereum}"  method="post">
+                        <input th:name= "value" type="text" placeholder="$ 0.00" autocomplete="off"/>
+
+                        <div class="flist">
+                            <p>&nbsp;</p>
+                            <button type="submit" class="button blue" >Sell</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="rwrap">
+                    <div>
+                        <div class="flist">
+                            <p th:text="'Current price: ' +${#numbers.setFormatDecimal(prices.get('ethereum'), 1, 'DEFAULT', 2, 'DEFAULT') + '$'}"> </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="cbox fleft" style="margin-top: 60px">
+                <h3>Sell Polkadot </h3>
+                <div class="flist">
+                    <p>Polkadot Amount:</p>
+                    <form th:action="@{/trading/sell/polkadot}"  method="post">
+                        <input th:name= "value" type="text" placeholder="$ 0.00" autocomplete="off"/>
+
+                        <div class="flist">
+                            <p>&nbsp;</p>
+                            <button type="submit" class="button blue" >Sell</button>
+                        </div>
+                    </form>
+                    <div class="rwrap">
+                         <div>
+                        <div class="flist">
+                            <p th:text="'Current price: '+ ${#numbers.setFormatDecimal(prices.get('polkadot'), 1, 'DEFAULT', 2, 'DEFAULT') + '$'}"> </p>
+                        </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cbox fright" style="margin-top: 60px">
+                <h3>Sell Solana</h3>
+                <div class="flist">
+                    <p>Solana Amount:</p>
+                    <form th:action="@{/trading/sell/solana}"  method="post">
+                        <input th:name= "value" type="text" placeholder="$ 0.00" autocomplete="off"/>
+
+                        <div class="flist">
+                            <p>&nbsp;</p>
+                            <button type="submit" class="button blue" >Sell</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="rwrap">
+                    <div>
+                        <div class="flist">
+                            <p th:text="'Current price: ' +${#numbers.setFormatDecimal(prices.get('solana'), 1, 'DEFAULT', 2, 'DEFAULT') + '$'} "> </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+

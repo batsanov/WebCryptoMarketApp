@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<form  th:action="@{/user/edit/{id}(id=${user.id})}" th:object="${input}" method="post">
+    <h1 class = "current_value" th:text="'Current ' + ${toEdit} + ' is ' + ${currentValue}" style="color:#EF4F50" > </h1>;
+    <input th:name="${toEdit}" type="text" class="feedback-input" th:placeholder="'new ' + ${toEdit}" />
+    <button type="submit" class="submit-btn">UPDATE</button>
+</form>
+
+<div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+
+<h1 class="submit-feedback">YOUR FORM HAS BEEN SENT</h1>
+</body>
+</html>

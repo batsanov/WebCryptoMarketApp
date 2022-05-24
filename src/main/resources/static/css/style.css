@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+    background: #1E1E28;
+}
+
+form {
+    max-width:420px;
+    margin:50px auto 30px;
+    padding: 20px
+}
+
+.feedback-input {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: transparent;
+    border:2px solid #EF4F50;;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.feedback-input:focus {
+    border: 2px solid #2ecc71;
+}
+
+textarea {
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
+}
+
+.submit-btn {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 100%;
+    background: #EF4F50;
+    border-radius: 0;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 100;
+}
+
+.submit-btn:hover {
+    <!-- 3498db -->
+
+    background: #EF4F50;
+    letter-spacing: 8px;
+}
+
+.submit-feedback {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    display: none;
+}
+
+/* Submit Loader */
+/*==============*/
+
+.spinner {
+    display: none;
+    margin: 0 auto 0;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background: #EF4F50;
+
+    border-radius: 100%;
+    display: inline-block;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    animation-fill-mode: both;
+}
+
+.spinner .bounce1 {
+    animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    animation-delay: -0.16s;
+}
+
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0.0);
+    } 40% {
+          transform: scale(1.0);
+      }
+}
+a {
+    color: white;
+    font-family: helvetica;
+    text-decoration: none;
+}
+
+

@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Error page</title>
+    <link rel="stylesheet" href="/css/error.css">
+</head>
+
+<div id="main">
+    <div class="fzf">
+        <h1 th:text="${error}"></h1>
+        <p></p>
+        <a href="/" class="btn" data-wipe="Navigate to register">Navigate to register</a>
+        <a href="/login" class="btn" data-wipe="Navigate to login">Navigate to login</a>
+    </div>
+</div>

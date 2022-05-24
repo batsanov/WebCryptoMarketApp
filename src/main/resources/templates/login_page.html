@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<form method="post" action="login" th:object="${loginRequest}">
+    <input name="username" type="text" class="feedback-input" placeholder="username" />
+    <input name="password" type="password" class="feedback-input" placeholder="password" />
+    <button type="submit" class="submit-btn">LOGIN</button>
+
+    <a href="/" >Navigate to register</a>
+</form>
+
+<div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+
+<h1 class="submit-feedback">YOUR FORM HAS BEEN SENT</h1>
+</body>
+</html>

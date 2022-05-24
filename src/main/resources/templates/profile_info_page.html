@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/profile.css">
+    <title>Document</title>
+</head>
+
+<body>
+<header>
+    <h1></h1>
+</header>
+
+<main>
+    <div class="wrapper-fluid">
+        <div class="col-fl-md-12">
+            <div class="col-fl-md-4">
+                <div class="whole-right-single">
+                    <div class="img-right"> <img th:src="@{${user.profilePicture}}" class="img-fw" height="300" alt=""></div>
+                    <div class="text-right">
+                        <h1>Possessions</h1>
+
+                    </div>
+                    <div class="contact">
+                        <ul>
+                                    <li th:each="possession,rStat : ${possessionsMap}" >
+                                        <span th:text="${possession.getKey()} ">Default</span>
+                                        <span th:text="${#numbers.setFormatDecimal(possession.getValue(), 1, 'DEFAULT', 6, 'DEFAULT')}" th:if="${rStat.count} &gt; 1">Default</span>
+                                        <span th:text="${#numbers.setFormatDecimal(possession.getValue(), 1, 'DEFAULT', 2, 'DEFAULT')}" th:if="${rStat.count} &lt; 2">Default</span>
+                                        <span th:text="${#numbers.setFormatDecimal(prices.get(possession.getKey()) * possessions.getCoin(possession.getKey()), 1, 'DEFAULT', 2, 'DEFAULT') + '$'}" th:if="${rStat.count} &gt; 1"></span>
+                                    </li>
+                                </ul>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+            <div class="col-fl-md-8">
+                <div class="whole-left-single">
+                    <div class="text-left">
+                        <h3>Email</h3>
+                        <p th:text= "${user.email}"></p>
+                    </div>
+                    <div class="text-left">
+                        <h3>Username:</h3>
+                        <p th:text= "${user.username}"></p>
+                    </div>
+                    <div class="text-left">
+                        <h3>Password:</h3>
+                        <p th:text= "${user.password}"></p>
+                    </div>
+                    <div class="text-left">
+                        <a class="fcc-btn"   th:href= "@{/user/logout}"> Logout </a>
+                    </div>
+
+                    <div class="text-left">
+
+                        <a class="fcc-btn"   th:href= "@{/trading/page}">  Buy/Sell  </a>
+                    </div>
+
+                </div>
+                <div class="whole-left-single">
+                    <div class="text-left">
+                         <a class="fcc-btn" th:href= "@{/user/profile/edit/username}"> Edit username </a>
+                    </div>
+                    <div class="text-left">
+                        <a class="fcc-btn" th:href= "@{/user/profile/edit/password}"> Edit password </a>
+                    </div>
+                    <div class="text-left">
+                        <a class="fcc-btn" th:href= "@{/user/profile/edit/email}"> Edit email </a>
+                    </div>
+                    <div class="text-left">
+                        <a class="fcc-btn"th:href= "@{/user/profile/edit/image}"> Change profile picture </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="clearfix"></div>
+
+<footer class="t-center t-light">
+    <small>Batsanov</small>
+</footer>
+
+</body>
+
+</html>
