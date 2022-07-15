@@ -51,7 +51,6 @@ public class TradingController {
     public String getTrading(Model model){
         model.addAttribute("prices", pricesController.getCurrentPrices());
 
-
         return "trading_page";
     }
 

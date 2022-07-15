@@ -7,15 +7,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class RegistrationService {
     private final UserService userService;
-    private final EmailValidator emailValidator;
 
-    public RegistrationService(UserService userService, EmailValidator emailValidator) {
+    public RegistrationService(UserService userService) {
         this.userService = userService;
-        this.emailValidator = emailValidator;
     }
 
     public boolean register(RegistrationRequest request) {
-        boolean isValidEmail = emailValidator.validate(request.getEmail());
+        boolean isValidEmail = EmailValidator.validate(request.getEmail());
         if(!isValidEmail){
             throw new IllegalStateException("Email not valid!");
         }
